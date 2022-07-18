@@ -11,7 +11,8 @@ class CharList extends Component {
         loading: true,
         error: false,
         newItemLoading: false,
-        offset: Number(localStorage.getItem('offset') || 210),
+        // offset: Number(localStorage.getItem('offset') || 210),
+        offset: 210,
         charEnded: false
     }
 
@@ -85,9 +86,11 @@ class CharList extends Component {
             
             return (
                 <li 
+                    ref={this.setRef}
+                    tabIndex={0}
                     className="char__item"
                     key={item.id}
-                    onClick={() => this.props.onCharSelected(item.id)}>
+                    onFocus={() => this.props.onCharSelected(item.id)}>
                         <img src={item.thumbnail} alt={item.name} style={imgStyle}/>
                         <div className="char__name">{item.name}</div>
                 </li>

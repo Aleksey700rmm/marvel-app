@@ -12,7 +12,7 @@ const App = () => {
                 <AppHeader/>
                 <main>
                     <Routes>
-                        <Route path='/' element={<MainPage/>}/>
+                        <Route path='/Marvel-app' element={<MainPage/>}/>
                         <Route path='/comics' element={<ComicsPage/>}/>
                     </Routes>
                     

@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect, StrictMode } from 'react';
+import { useState, useEffect } from 'react';
 
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
@@ -38,12 +38,10 @@ const SinglePage = ({Component, dataType}) => {
     
     return (
         <>
-            <StrictMode>
                 <AppBanner/>
                 {errorMessage}
                 {spinner}
                 {content}
-            </StrictMode>
         </>
     )
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef} from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import PropTypes from 'prop-types';
 
@@ -7,6 +7,7 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 import Spinner from '../spinner/Spinner';
 
 import './charList.scss';
+import { useMemo } from 'react';
 
 const setContent = (process, Component, newItemLoading) => {
     switch (process) {
@@ -34,7 +35,7 @@ const CharList = (props) => {
     const [offset, setOffset] = useState(210);
     const [charEnded, setCharEnded] = useState([]);
 
-    const {loading, error, getAllCharacters, process, setProcess} = useMarvelService();
+    const { getAllCharacters, process, setProcess} = useMarvelService();
 
     useEffect(() => {
         onRequest(offset, true); 
@@ -107,11 +108,13 @@ const CharList = (props) => {
         )
     }
 
-    localStorage.setItem('offset', String(offset));
+    const elements = useMemo(() => {
+        return setContent(process, () => renderItems(charList), newItemLoading);
+    }, [process]);
 
     return (
         <div  className="char__list">
-            {setContent(process, () => renderItems(charList), newItemLoading)}
+            {elements}
             <button 
                 className="button button__main button__long"
                 disabled={newItemLoading}

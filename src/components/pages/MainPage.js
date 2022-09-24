@@ -7,45 +7,41 @@ import CharInfo from "../charInfo/CharInfo";
 import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import FindCharForm from "../findCharForm/FindCharForm";
 
-import decoration from '../../resources/img/vision.png';
+import decoration from "../../resources/img/vision.png";
 
 const MainPage = () => {
-    
-    const [selectedChar, setChar] = useState(null); 
+    const [selectedChar, setChar] = useState(null);
 
     const onCharSelected = (id) => {
         setChar(id);
-    }
+    };
 
     return (
         <>
             <Helmet>
-                <meta
-                    name="description"
-                    content="Marvel information portal"
-                />
+                <meta name="description" content="Marvel information portal" />
                 <title>Marvel information portal</title>
             </Helmet>
             <ErrorBoundary>
-                <RandomChar/>
+                <RandomChar />
             </ErrorBoundary>
             <div className="char__content">
                 <ErrorBoundary>
-                    <CharList onCharSelected={onCharSelected}/>
+                    <CharList onCharSelected={onCharSelected} />
                 </ErrorBoundary>
                 <div>
                     <ErrorBoundary>
-                        <CharInfo charId={selectedChar}/>
+                        <CharInfo charId={selectedChar} />
                     </ErrorBoundary>
                     <ErrorBoundary>
-                        <FindCharForm/>
+                        <FindCharForm />
                     </ErrorBoundary>
                 </div>
             </div>
-            
-            <img className="bg-decoration" src={decoration} alt="vision"/>
+
+            <img className="bg-decoration" src={decoration} alt="vision" />
         </>
-    )
-}
+    );
+};
 
 export default MainPage;

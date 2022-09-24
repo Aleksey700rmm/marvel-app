@@ -4,14 +4,18 @@ This is an Marvel-api based portal and it contains data about a lot of character
 
 ## How to run the app
 
-If you want to run the app you need to clone the repository:
+If you want to run the app you need to install the packages:
 
-### `git clone git@github.com:Aleksey700rmm/employees-panel.git`
-
-Then you have to install the packages:
-
-### `npm i`
+```
+npm install
+```
 
 Then run the project:
 
-### `npm start`
+```
+npm start
+```
+
+<div align="center">
+  <br /><br /><img src="https://i.ibb.co/Npp7sww/full-Size-Screen.png" alt="Screen"/> <br /><br />
+</div>

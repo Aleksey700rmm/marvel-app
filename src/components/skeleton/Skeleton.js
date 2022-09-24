@@ -1,4 +1,4 @@
-import './skeleton.scss';
+import "./skeleton.scss";
 
 const Skeleton = () => {
     return (
@@ -14,7 +14,7 @@ const Skeleton = () => {
                 <div className="pulse skeleton__block"></div>
             </div>
         </>
-    )
-}
+    );
+};
 
 export default Skeleton;
